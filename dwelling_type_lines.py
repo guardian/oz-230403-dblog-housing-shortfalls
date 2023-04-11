@@ -47,6 +47,7 @@ pp(df)
 # %%
 
 
+
 bye = df
 
 # final = bye.to_dict(orient='records') 
@@ -85,6 +86,7 @@ bye = df
 zdf = df.copy()
 
 
+zdf.rename(columns={'Apartments': "Apartments and townhouses"}, inplace=True)
 
 pp(zdf)
 
@@ -97,7 +99,7 @@ final = bye.to_dict(orient='records')
 template = [
 	{
     "title": f"Most of the shortfall will be in apartments",
-    "subtitle": f"Showing the cumulative difference between net annual supply and household formation (demand) for each dweling type",
+    "subtitle": f"Showing the cumulative difference between net annual supply and household formation (demand) for each dwelling type",
 	"footnote": "",
     "source": "| Source: National Housing Finance and Investment Corporation",
     "dateFormat": "%Y-%m-%d",
@@ -117,7 +119,7 @@ testo = "-testo"
 chart_key = f"oz-datablogs-housing-short-fall-dwelling-type-cumulative-bars{testo}"
 yachtCharter(template=template, 
 			data=final,
-            key = [{"key":"Detached homes", "colour":'#005689'}, {"key":"Apartments", "colour":'#cc2b12'}],
+            key = [{"key":"Detached homes", "colour":'#005689'}, {"key":"Apartments and townhouses", "colour":'#cc2b12'}],
             # trendline = trends,
             # options=[{"colorScheme":"guardian", 'trendColors': '#94b1ca,#a9af2b,#a9af2b,#a9af2b'}],
             # options=[{"colorScheme":"guardian"],
